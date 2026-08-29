@@ -43,7 +43,7 @@ export const RushRadar: React.FC<RushRadarProps> = ({ onOpenClassSync }) => {
       </div>
 
       {/* Visual Rush Bar Wave Chart */}
-      <div className="grid grid-cols-6 gap-2 sm:gap-3 my-3">
+      <div className="flex items-center gap-3 my-3 overflow-x-auto pb-2 scrollbar-none w-full">
         {CAMPUS_RUSH_DATA.map((point, index) => {
           const isHigh = point.crowdLevel >= 80;
           const isModerate = point.crowdLevel >= 40 && point.crowdLevel < 80;
@@ -51,7 +51,7 @@ export const RushRadar: React.FC<RushRadarProps> = ({ onOpenClassSync }) => {
           return (
             <div
               key={index}
-              className={`p-2 sm:p-2.5 rounded-xl border flex flex-col justify-between transition-all duration-200 ${
+              className={`min-w-[85px] shrink-0 p-2 sm:p-2.5 rounded-xl border flex flex-col justify-between transition-all duration-200 ${
                 isHigh
                   ? 'bg-rose-950/20 border-rose-500/30 hover:border-rose-400/50'
                   : isModerate
