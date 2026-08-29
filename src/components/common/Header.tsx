@@ -75,7 +75,7 @@ export const Header: React.FC<{ isMobileFrame: boolean; setIsMobileFrame: (val: 
   return (
     <header className="sticky top-0 z-40 w-full border-b border-slate-800 bg-slate-950/80 backdrop-blur-xl">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-16 gap-3">
+        <div className="flex items-center justify-between h-16 gap-2 overflow-x-auto scrollbar-none">
           {/* Brand Logo */}
           <div className="flex items-center gap-3">
             <div className="w-10 h-10 rounded-xl bg-gradient-to-tr from-emerald-500 via-teal-500 to-cyan-400 p-0.5 shadow-lg shadow-emerald-500/20 flex items-center justify-center">
@@ -106,7 +106,7 @@ export const Header: React.FC<{ isMobileFrame: boolean; setIsMobileFrame: (val: 
           </div>
 
           {/* Role Navigation Switcher */}
-          <div className="flex items-center bg-slate-900/90 p-1 rounded-xl border border-slate-800 shadow-inner">
+          <div className="flex items-center bg-slate-900/90 p-1 rounded-xl border border-slate-800 shrink-0">
             <button
               onClick={() => setRole('STUDENT')}
               className={`flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-semibold transition-all duration-200 ${
